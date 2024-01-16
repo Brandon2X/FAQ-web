@@ -13,14 +13,92 @@
         </div>
         <div class="content">
             <h1>FAQ'S</h1>
-            <p class="pg1">What is front-end mentor , and how will it help me</p>
-            <p class = "pg2"> Is Front-end Mentor free?</p>
-            <p class = "pg3"> Can I use front end mentor projects in my portfolio? </p>
-            <p class = "pg4"> How can I get help if I'm stuck on a challenge? </p>
+            
+            <!-- Question 1 -->
+            <div class="question-container">
+                <p class="question pg1" onclick="toggleAnswer(1)">
+                    <span class="question-text">What is Frontend Mentor, and how will it help me?</span>
+                    <span class="toggle-icon" id="toggle-icon-1">+</span>
+                </p>
+                <div class="answer" id="answer1" style="display: none;">
+                    Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-container">
+                <p class="question pg2" onclick="toggleAnswer(2)">
+                    <span class="question-text">Is Frontend Mentor free?</span>
+                    <span class="toggle-icon" id="toggle-icon-2">+</span>
+                </p>
+                <div class="answer" id="answer2" style="display: none;">
+                    Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels.
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-container">
+                <p class="question pg3" onclick="toggleAnswer(3)">
+                    <span class="question-text">Can I use Frontend Mentor projects in my portfolio?</span>
+                    <span class="toggle-icon" id="toggle-icon-3">+</span>
+                </p>
+                <div class="answer" id="answer3" style="display: none;">
+                    Yes, you can use Frontend Mentor projects in your portfolio. It's a great way to showcase your coding skills and projects to potential employers or clients.
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-container">
+                <p class="question pg4" onclick="toggleAnswer(4)">
+                    <span class="question-text">How can I get help if I'm stuck on a Frontend Mentor challenge?</span>
+                    <span class="toggle-icon" id="toggle-icon-4">+</span>
+                </p>
+                <div class="answer" id="answer4" style="display: none;">
+                    If you're stuck on a Frontend Mentor challenge, you can seek help from the community forums, documentation, or reach out to other developers who have completed similar challenges. Collaboration and learning from others are encouraged.
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    initializeQuestionState(1);
+                    initializeQuestionState(2);
+                    initializeQuestionState(3);
+                    initializeQuestionState(4);
+                    
+                });
+
+                function toggleAnswer(questionNumber) {
+                    var answerElement = document.getElementById('answer' + questionNumber);
+                    var toggleIcon = document.getElementById('toggle-icon-' + questionNumber);
+
+                    if (answerElement.style.display === 'none' || answerElement.style.display === '') {
+                        answerElement.style.display = 'block';
+                        toggleIcon.textContent = '-';
+                    } else {
+                        answerElement.style.display = 'none';
+                        toggleIcon.textContent = '+';
+                    }
+                }
+
+                function initializeQuestionState(questionNumber) {
+                    var answerElement = document.getElementById('answer' + questionNumber);
+                    var toggleIcon = document.getElementById('toggle-icon-' + questionNumber);
+
+                    if (answerElement.style.display === 'none' || answerElement.style.display === '') {
+                        toggleIcon.textContent = '+';
+                    } else {
+                        toggleIcon.textContent = '-';
+                    }
+                }
+            </script>
         </div>
     </div>
 </body>
 </html>
+
+
+           
+
 
 
 
